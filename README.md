@@ -3,6 +3,6 @@
 ## Quick start
 
 ```bash
-npm install : permet de télécharger le fichier node_modules
+npm install
 npm start
 ```

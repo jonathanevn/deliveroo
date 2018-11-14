@@ -1,5 +1,8 @@
 import React from "react";
 import axios from "axios";
+import "../App.css";
+import Basket from "./Panier";
+import AllCards from "./AllCards";
 
 class MenuSelection extends React.Component {
   state = {
@@ -8,37 +11,31 @@ class MenuSelection extends React.Component {
   };
 
   render() {
-    const menuItems = [];
-    const entries = Object.entries(this.state.menu);
-
-    for (let i = 0; i < entries.length; i++) {
-      menuItems.push(<h2>{entries[i][0]}</h2>);
-      for (let j = 0; j < entries[i][1].length; j++) {
-        menuItems.push(
-          <div>
-            {entries[i][1][j].title}
-            {entries[i][1][j].description}
-            {entries[i][1][j].price}
-          </div>
-        );
-      }
-    }
-
     return (
-      <div id="root">
-        <div className="container">
-          <div id="restaurant">
-            <h2>{this.state.restaurant.name}</h2>
-            <span class="descriptionRestaurant">
-              {this.state.restaurant.description}
-            </span>
-            <img
-              src={this.state.restaurant.picture}
-              alt="photo-restaurant"
-              width="370px"
-            />
+      <div>
+        <div id="background-white">
+          <div className="container">
+            <div id="restaurant">
+              <div className="infoRestaurant">
+                <h2>{this.state.restaurant.name}</h2>
+                <span>{this.state.restaurant.description}</span>
+              </div>
+              <img
+                className="pictureRestaurant"
+                alt=""
+                src={this.state.restaurant.picture}
+              />
+            </div>
           </div>
-          <div id="menuList">{menuItems}</div>
+        </div>
+
+        <div id="background-grey">
+          <div className="container">
+            <div id="menuList">
+              <AllCards label={this.state.menu} />
+              <Basket />
+            </div>
+          </div>
         </div>
       </div>
     );

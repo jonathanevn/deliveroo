@@ -1,15 +1,29 @@
-#nav {
+/*----- NAVBAR -----*/
+
+#header {
   display: flex;
-  border-bottom: 1px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 0.01em solid #e7ebeb;
 }
 .page {
   display: flex;
-  align-content: space-around;
-  justify-content: center;
 }
 
+/*----- BACKGROUND -----*/
+
+#background-white {
+  background-color: white;
+}
+
+#background-grey {
+  background-color: #f3f5f5;
+}
+
+/*----- GENERAL -----*/
 .container {
-  width: 1200px;
+  width: 1124px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -20,14 +34,118 @@ ul {
   padding: 0px;
 }
 
-.restaurant {
+/*----- RESTAURANT -----*/
+#restaurant {
   display: flex;
 }
 
-.descriptionRestaurant {
-  width: 50%;
+.infoRestaurant {
+  display: flex;
+  flex-direction: column;
 }
 
+.descriptionRestaurant {
+  color: #838585;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+.pictureRestaurant {
+  width: 33%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+/*----- MENU -----*/
+
 #menuList {
-  background-color: #f3f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+}
+
+.allMenuCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.menuCards {
+  background-color: white;
+  width: 43%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.menuInfo {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding-right: 20px;
+}
+
+.imageMenu {
+  width: 40%;
+  height: 80px;
+  align-content: center;
+  border-radius: 2px;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.description {
+  color: #838585;
+  font-size: 12px;
+}
+
+.price {
+  color: #838585;
+  font-size: 16px;
+}
+
+/*----- BASKET -----*/
+button {
+  background-color: #b9c3c3;
+  color: #8c9b9b;
+  font-weight: bold;
+  font-size: 15px;
+  width: calc(100% - 10px);
+  margin: 5px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 2px;
+  border: none;
+}
+
+#basket {
+  position: absolute;
+  right: 0;
+  width: 33%;
+  background-color: #fff;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0px 22px 24px 0px rgba(46, 51, 51, 0.07);
+}
+#basketSticky {
+  position: sticky;
+}
+
+.emptyBasket {
+  color: #838585;
+  text-align: center;
+  font-size: 15px;
+  padding: 32px 0 64px;
+  line-height: 1.4;
 }

@@ -4,8 +4,10 @@ import Logo from "./Logo";
 class Header extends React.Component {
   render() {
     return (
-      <div id="header" className="container">
-        <Logo />
+      <div id="header">
+        <div className="container">
+          <Logo />
+        </div>
       </div>
     );
   }

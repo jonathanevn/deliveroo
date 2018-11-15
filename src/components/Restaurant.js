@@ -69,6 +69,9 @@ class Restaurant extends React.Component {
                     if (newCart[j].id === id) {
                       newCart[j].quantity--;
                     }
+                    if (newCart[j].quantity <= 0) {
+                      newCart[j].quantity = 0;
+                    }
                   }
                   this.setState({
                     cart: newCart

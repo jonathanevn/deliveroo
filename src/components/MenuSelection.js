@@ -16,9 +16,11 @@ class MenuSelection extends React.Component {
         <div id="background-white">
           <div className="container">
             <div id="restaurant">
-              <div className="infoRestaurant">
+              <div className="presentationRestaurant">
                 <h2>{this.state.restaurant.name}</h2>
-                <span>{this.state.restaurant.description}</span>
+                <span className="infoRestaurant">
+                  {this.state.restaurant.description}
+                </span>
               </div>
               <img
                 className="pictureRestaurant"

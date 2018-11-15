@@ -1,5 +1,7 @@
 import React from "react";
 import "../App.css";
+import Description from "./Description";
+import PicturesMenu from "./PicturesMenu";
 
 class AllCards extends React.Component {
   render() {
@@ -13,15 +15,13 @@ class AllCards extends React.Component {
         menuItemsIntermediaire.push(
           <div className="menuCards">
             <div className="menuInfo">
-              <p className="titleRestaurant">{entries[i][1][j].title}</p>
-              <p className="descriptionRestaurant">
-                {entries[i][1][j].description}
-              </p>
+              <p className="title">{entries[i][1][j].title}</p>
+              <Description text={entries[i][1][j].description} />
               <span className="price">
                 {entries[i][1][j].price} {"€"}
               </span>
             </div>
-            <img className="imageMenu" alt="" src={entries[i][1][j].picture} />
+            <PicturesMenu src={entries[i][1][j].picture} />
           </div>
         );
       }

@@ -39,16 +39,14 @@ ul {
   display: flex;
 }
 
-.infoRestaurant {
+.presentationRestaurant {
   display: flex;
   flex-direction: column;
 }
 
-.descriptionRestaurant {
+.infoRestaurant {
   color: #838585;
-  font-size: 12px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 p {
@@ -101,6 +99,10 @@ p {
   border-radius: 2px;
 }
 
+.noPictures {
+  display: none;
+}
+
 .title {
   font-size: 16px;
 }
@@ -108,6 +110,8 @@ p {
 .description {
   color: #838585;
   font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .price {

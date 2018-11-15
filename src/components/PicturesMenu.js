@@ -5,7 +5,7 @@ class PicturesMenu extends React.Component {
   render() {
     let imgClassName = "";
     if (this.props.src === undefined) {
-      imgClassName = "noPictures";
+      imgClassName = "noImageMenu";
     } else {
       imgClassName = "imageMenu";
     }

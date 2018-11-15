@@ -34,29 +34,33 @@ ul {
   padding: 0px;
 }
 
-/*----- RESTAURANT -----*/
-#restaurant {
-  display: flex;
-}
-
-.presentationRestaurant {
-  display: flex;
-  flex-direction: column;
-}
-
-.infoRestaurant {
-  color: #838585;
-  font-size: 16px;
-}
-
 p {
   margin: 0;
 }
 
+/*----- RESTAURANT -----*/
+
+#restaurant {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.name-description-Restaurant {
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionRestaurant {
+  color: #838585;
+  font-size: 16px;
+}
+
 .pictureRestaurant {
   width: 33%;
-  height: 100%;
+  height: 160px;
   border-radius: 3px;
+  object-fit: cover;
 }
 
 /*----- MENU -----*/
@@ -68,7 +72,7 @@ p {
   position: relative;
 }
 
-.allMenuCards {
+.menuItems {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -85,6 +89,10 @@ p {
   border-radius: 2px;
 }
 
+.menuCards:hover {
+  box-shadow: 0px 22px 24px 0px rgba(46, 51, 51, 0.07);
+}
+
 .menuInfo {
   display: flex;
   flex-direction: column;
@@ -93,13 +101,15 @@ p {
 }
 
 .imageMenu {
-  width: 40%;
+  width: 80px;
   height: 80px;
-  align-content: center;
   border-radius: 2px;
+  object-fit: cover;
+  display: flex;
+  align-items: flex-end;
 }
 
-.noPictures {
+.noImageMenu {
   display: none;
 }
 
@@ -120,7 +130,7 @@ p {
 }
 
 /*----- BASKET -----*/
-button {
+.confirmButton {
   background-color: #b9c3c3;
   color: #8c9b9b;
   font-weight: bold;

@@ -34,8 +34,20 @@ ul {
   padding: 0px;
 }
 
+h2 {
+  font-family: "Stratos Deliveroo Web";
+  font-weight: 600;
+  font-size: 28px;
+  color: #2e3333;
+}
+
 p {
   margin: 0;
+  font-family: "Adelle Sans";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #2e3333;
 }
 
 li {
@@ -57,7 +69,11 @@ li {
 
 .descriptionRestaurant {
   color: #838585;
-  font-size: 16px;
+  font-family: "Adelle Sans";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  padding-right: 30px;
 }
 
 .pictureRestaurant {
@@ -85,6 +101,7 @@ li {
 
 .menuCards {
   background-color: white;
+  transition-duration: 0.6s;
   width: 43%;
   display: flex;
   flex-direction: row;
@@ -95,6 +112,7 @@ li {
 
 .menuCards:hover {
   box-shadow: 0px 22px 24px 0px rgba(46, 51, 51, 0.07);
+  cursor: pointer;
 }
 
 .menuInfo {
@@ -105,8 +123,8 @@ li {
 }
 
 .imageMenu {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 2px;
   object-fit: cover;
   display: flex;
@@ -123,7 +141,8 @@ li {
 
 .description {
   color: #838585;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 19px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -135,7 +154,8 @@ li {
 
 /*----- CART -----*/
 .confirmButton {
-  background-color: #33d6c8;
+  background-color: #01ccbc;
+  transition-duration: 0.6s;
   color: white;
   font-weight: bold;
   font-size: 15px;
@@ -146,6 +166,11 @@ li {
   padding-bottom: 10px;
   border-radius: 2px;
   border: none;
+  cursor: pointer;
+}
+
+.confirmButton:hover {
+  background-color: #33d6c8;
 }
 
 .disableButton {
@@ -164,6 +189,10 @@ li {
 
 #cartEmpty {
   position: absolute;
+  font-family: "Adelle Sans";
+  font-weight: 400;
+  line-height: 19px;
+  color: #2e3333;
   right: 0;
   width: 33%;
   background-color: #fff;
@@ -174,6 +203,10 @@ li {
 
 #cartWithItems {
   position: absolute;
+  font-family: "Adelle Sans";
+  font-weight: 400;
+  line-height: 19px;
+  color: #2e3333;
   right: 0;
   width: 33%;
   background-color: #fff;
@@ -214,10 +247,10 @@ li {
 }
 
 .quantityButton {
-  border-color: #33d6c8;
-  color: #33d6c8;
+  border-color: #01ccbc;
+  color: #01ccbc;
   border-radius: 50%;
-  border-width: 1.5px;
+  border-width: 1px;
   margin: 10px;
   font-size: 13px;
   padding-left: 5px;
@@ -226,6 +259,13 @@ li {
   background-color: white;
   border-style: solid;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.quantityButton:hover {
+  color: #757676;
+  border-color: #757676;
+  transition-duration: 0.6s;
 }
 
 #subtotal {

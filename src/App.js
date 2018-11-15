@@ -5,6 +5,7 @@ import About from "./components/About";
 import Restaurant from "./components/Restaurant";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./deliveroo.css";
 
 class App extends React.Component {
   render() {

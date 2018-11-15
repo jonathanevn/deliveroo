@@ -12,6 +12,30 @@ class Restaurant extends React.Component {
     cart: []
   };
 
+  handleOnClick = menuItem => {
+    const oldCart = this.state.cart;
+    const newCart = [...this.state.cart];
+    let productFound = false;
+    for (let i = 0; i < newCart.length; i++) {
+      console.log(newCart[i].name);
+      if (newCart[i].id === menuItem.id) {
+        console.log(newCart[i].id);
+        productFound = true;
+        newCart[i].quantity++;
+      }
+    }
+    if (productFound === false) {
+      newCart.push({
+        id: menuItem.id,
+        quantity: 1,
+        name: menuItem.title,
+        price: Number(menuItem.price)
+      });
+    }
+
+    this.setState({ cart: newCart });
+  };
+
   render() {
     return (
       <div>
@@ -28,8 +52,22 @@ class Restaurant extends React.Component {
         <div id="background-grey">
           <div className="container">
             <div id="menuList">
-              <Menu menu={this.state.menu} />
-              <Cart />
+              <Menu menu={this.state.menu} handleClick={this.handleOnClick} />
+              <Cart
+                selectedProducts={this.state.cart}
+                onIcrement={id => {
+                  const newCart = [...this.state.cart];
+
+                  for (let i = 0; i < newCart.length; i++) {
+                    if (newCart[i].id === id) {
+                      newCart[i].quantity++;
+                    }
+                  }
+                  this.setState({
+                    cart: newCart
+                  });
+                }}
+              />
             </div>
           </div>
         </div>

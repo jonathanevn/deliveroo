@@ -8,6 +8,9 @@ class MenuSection extends Component {
     for (let i = 0; i < this.props.menuItems.length; i++) {
       menuItemsComponents.push(
         <MenuItem
+          handleClick={() => {
+            this.props.handleClick(this.props.menuItems[i]);
+          }}
           key={i}
           label={this.props.menuItems[i].title}
           description={this.props.menuItems[i].description}

@@ -14,14 +14,21 @@ class Cart extends React.Component {
       );
     } else {
       const products = [];
+
       for (let i = 0; i < this.props.selectedProducts.length; i++) {
         products.push(
-          <li id="cartContent">
+          <li key={i} id="cartContent">
             <div id="cartButtonMenu">
               <button
                 className="quantityButton"
-                onClick={() => {
+                /* onClick={() => {
                   this.props.onDecrement(this.props.selectedProducts[i].id);
+                }} */
+                onClick={() => {
+                  this.props.onUpdateCart(
+                    this.props.selectedProducts[i].id,
+                    -1
+                  );
                 }}
               >
                 -
@@ -29,8 +36,11 @@ class Cart extends React.Component {
               {this.props.selectedProducts[i].quantity}
               <button
                 className="quantityButton"
-                onClick={() => {
+                /* onClick={() => {
                   this.props.onIncrement(this.props.selectedProducts[i].id);
+                }} */
+                onClick={() => {
+                  this.props.onUpdateCart(this.props.selectedProducts[i].id, 1);
                 }}
               >
                 +
@@ -45,13 +55,14 @@ class Cart extends React.Component {
           </li>
         );
       }
-      let subtotal = [];
-      let total = [];
+      let subtotal = 0;
+      let total = 0;
       let deliveryFees = 2.5;
-      for (let j = 0; j < products.length; j++) {
-        subtotal =
-          Number(subtotal) + Number(this.props.selectedProducts[j].price);
-        total = Number(subtotal) + Number(deliveryFees);
+      for (let j = 0; j < this.props.selectedProducts.length; j++) {
+        subtotal +=
+          this.props.selectedProducts[j].price *
+          this.props.selectedProducts[j].quantity;
+        total = subtotal + deliveryFees;
       }
 
       return (

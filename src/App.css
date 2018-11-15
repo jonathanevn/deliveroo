@@ -250,3 +250,12 @@ li {
   justify-content: space-between;
   padding: 15px;
 }
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 10px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  color: #33d6c8;
+}

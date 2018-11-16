@@ -58,9 +58,12 @@ class Restaurant extends React.Component {
                     if (newCart[j].id === id) {
                       newCart[j].quantity += qty;
                     }
-                    if (newCart[j].quantity <= 0) {
+                    if (newCart[j].quantity < 1) {
                       newCart[j].quantity = 0;
-                    }
+                      /* newCart[j].splice(j, 1); */
+                    } /* else {
+                      newCart[j].splice(j, 1);
+                    } */
                   }
                   this.setState({
                     cart: newCart
@@ -87,8 +90,10 @@ class Restaurant extends React.Component {
                     if (newCart[j].id === id) {
                       newCart[j].quantity--;
                     }
-                    if (newCart[j].quantity <= 0) {
+                    if (newCart[j].quantity >= 1) {
                       newCart[j].quantity = 0;
+                      newCart[j].slice(i, 1)
+
                     }
                   }
                   this.setState({

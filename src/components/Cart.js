@@ -1,4 +1,5 @@
 import React from "react";
+import Checkout from "./Checkout";
 import "../App.css";
 
 class Cart extends React.Component {
@@ -48,8 +49,10 @@ class Cart extends React.Component {
               {this.props.selectedProducts[i].name}
             </div>
             <div className="priceItem">
-              {Number(this.props.selectedProducts[i].price) *
-                this.props.selectedProducts[i].quantity}
+              {(
+                Number(this.props.selectedProducts[i].price) *
+                this.props.selectedProducts[i].quantity
+              ).toFixed(2)}
               {"€"}
             </div>
           </li>
@@ -62,7 +65,7 @@ class Cart extends React.Component {
         subtotal +=
           this.props.selectedProducts[j].price *
           this.props.selectedProducts[j].quantity;
-        total = subtotal + deliveryFees;
+        total = (subtotal + deliveryFees).toFixed(2);
       }
 
       return (

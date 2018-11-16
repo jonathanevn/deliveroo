@@ -53,16 +53,21 @@ class Form extends React.Component {
     const products = [];
     for (let i = 0; i < this.props.location.submittedCart.length; i++) {
       products.push(
-        <div key={i}>
-          <li>
-            {this.props.location.submittedCart[i].quantity}
-            {"x"}
-          </li>
-          <li>{this.props.location.submittedCart[i].name}</li>
-          <li>
-            {this.props.location.submittedCart[i].price}
-            {"€"}
-          </li>
+        <div id="cartItems" key={i}>
+          <div id="cartItem">
+            <div id="cartQuantityName">
+              <div className="quantity">
+                {this.props.location.submittedCart[i].quantity}
+                {"x"}
+              </div>
+              <div>{this.props.location.submittedCart[i].name}</div>
+            </div>
+
+            <div className="priceItem">
+              {this.props.location.submittedCart[i].price}
+              {"€"}
+            </div>
+          </div>
         </div>
       );
     }
@@ -73,7 +78,7 @@ class Form extends React.Component {
     console.log(this.props.location.submittedCart);
 
     return (
-      <div id="root">
+      <div id="background">
         <div id="container">
           <div id="form">
             <form onSubmit={this.handleSubmit}>
@@ -159,18 +164,32 @@ class Form extends React.Component {
           </div>
 
           <div id="cart">
-            <h3>Panier</h3>
-            <div>{this.handleCart()}</div>
+            <div class="PanierLabel">Panier</div>
+            {this.handleCart()}
             <hr />
-            <div>
-              Sous-total{this.props.location.subtotal}
-              {"€"}
-              Frais de livraison 2,50€
+
+            <div id="subtotalCart">
+              <div className="subtotal1line">
+                Sous-total
+                <div className="priceItemSubtotal">
+                  {this.props.location.subtotal}
+                  {"€"}
+                </div>
+              </div>
+
+              <div className="subtotal1line">
+                Frais de livraison
+                <div className="priceItemSubtotal"> 2,50€</div>
+              </div>
             </div>
+
             <hr />
-            <div>
-              Total{this.props.location.total}
-              {"€"}
+            <div id="totalCart">
+              <div>Total</div>
+              <div>
+                {this.props.location.total}
+                {"€"}
+              </div>
             </div>
           </div>
         </div>

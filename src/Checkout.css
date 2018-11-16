@@ -1,14 +1,15 @@
 /*----- GENERAL -----*/
 
-#root {
+#background {
   background-color: #f3f5f5;
 }
+
 #container {
   width: 1124px;
   margin: auto;
   display: flex;
-  border: 1px solid blue;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 #form {
@@ -18,17 +19,10 @@
   width: 60%;
   justify-content: center;
   align-content: center;
-  border: 1px solid red;
-  border: 1px solid yellow;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-#cart {
-  background-color: white;
-  border: 1px solid yellow;
-  padding: 30px;
-  width: 30%;
 }
 
 ul {
@@ -41,7 +35,6 @@ h2 {
   font-weight: 600;
   font-size: 28px;
   color: #2e3333;
-  margin-bottom: 0px;
 }
 
 p {
@@ -60,13 +53,13 @@ h3 {
   line-height: 21px;
   color: #2e3332;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 h5 {
   font-family: "Adelle Sans";
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 14px;
   color: #828585;
   margin: 0;
@@ -83,28 +76,8 @@ input {
   width: 100%;
   border-radius: 2px;
   border: 1px solid #01ccbc;
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-
-.submitButton {
-  background-color: #01ccbc;
-  transition-duration: 0.6s;
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
-  border-radius: 2px;
-  border: none;
-  cursor: pointer;
-  height: 40px;
-}
-
-.submitButton:hover {
-  background-color: #33d6c8;
+  margin-top: 10px;
+  margin-bottom: 27px;
 }
 
 ::placeholder {
@@ -120,15 +93,16 @@ input {
 }
 
 .leftInput  {
-  border: 1px solid yellow;
-  width: 45%;
+  width: 50%;
 }
 .rightInput {
-  width: 45%;
+  width: 50%;
 }
 
 form {
-  width: 65%;
+  width: 70%;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 #deliveryInfo {
@@ -154,4 +128,96 @@ form {
   margin-top: 5px;
   margin-bottom: 20px;
   padding-top: 15px;
+}
+
+.submitButton {
+  background-color: #01ccbc;
+  transition-duration: 0.6s;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+}
+
+.submitButton:hover {
+  background-color: #33d6c8;
+}
+
+/*----- CART -----*/
+
+.PanierLabel {
+  font-family: "Adelle Sans";
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+#cart {
+  background-color: white;
+  font-family: "Adelle Sans";
+  font-weight: 400;
+  line-height: 35px;
+  padding: 30px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  margin-top: 30px;
+}
+
+.quantity {
+  color: #828787;
+  padding-right: 20px;
+}
+
+#cartItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#cartQuantityName {
+  display: flex;
+}
+
+.priceItem {
+  display: flex;
+  align-content: flex-end;
+  text-align: end;
+}
+
+#subtotalCart {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.subtotal1line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.priceItemSubtotal {
+  display: flex;
+  align-content: flex-end;
+  text-align: end;
+  font-weight: 600;
+  color: #01ccbc;
+}
+
+#totalCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-top: 15px;
 }

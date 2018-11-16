@@ -13,11 +13,11 @@
 
 /*----- BACKGROUND -----*/
 
-#background-white {
+.background-white {
   background-color: white;
 }
 
-#background-grey {
+.background-grey {
   background-color: #f3f5f5;
 }
 

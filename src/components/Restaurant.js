@@ -36,7 +36,7 @@ class Restaurant extends React.Component {
   render() {
     return (
       <div>
-        <div id="background-white">
+        <div className="background-white">
           <div className="container">
             <RestaurantDescription
               name={this.state.restaurant.name}
@@ -46,7 +46,7 @@ class Restaurant extends React.Component {
           </div>
         </div>
 
-        <div id="background-grey">
+        <div className="background-grey">
           <div className="container">
             <div id="menuList">
               <Menu menu={this.state.menu} handleClick={this.handleOnClick} />

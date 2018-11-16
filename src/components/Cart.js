@@ -1,6 +1,6 @@
 import React from "react";
-import Checkout from "./Checkout";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 class Cart extends React.Component {
   render() {
@@ -70,28 +70,36 @@ class Cart extends React.Component {
 
       return (
         <div id="cartWithItems">
-          <div id="basketSticky">
+          <Link
+            to={{
+              pathname: "/checkout",
+              submittedCart: this.props.selectedProducts,
+              subtotal: subtotal,
+              total: total
+            }}
+          >
             <button className="confirmButton">Valider mon panier</button>
-            <div>{products}</div>
-            <hr />
-            <div id="subtotal">
-              <div id="subtotal1">
-                <div>Sous total</div>
-                <div className="priceCart">
-                  {subtotal} {"€"}
-                </div>
-              </div>
-              <div id="subtotal2">
-                <div>Frais de livraison </div>
-                <div className="priceCart">2,50 €</div>
+          </Link>
+
+          <div>{products}</div>
+          <hr />
+          <div id="subtotal">
+            <div id="subtotal1">
+              <div>Sous total</div>
+              <div className="priceCart">
+                {subtotal} {"€"}
               </div>
             </div>
-            <hr />
-            <div id="total">
-              <div>Total</div>
-              <div className="priceCart">
-                {total} {"€"}
-              </div>
+            <div id="subtotal2">
+              <div>Frais de livraison </div>
+              <div className="priceCart">2,50 €</div>
+            </div>
+          </div>
+          <hr />
+          <div id="total">
+            <div>Total</div>
+            <div className="priceCart">
+              {total} {"€"}
             </div>
           </div>
         </div>

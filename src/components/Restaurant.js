@@ -51,6 +51,7 @@ class Restaurant extends React.Component {
             <div id="menuList">
               <Menu menu={this.state.menu} handleClick={this.handleOnClick} />
               <Cart
+                name={this.state.restaurant.name}
                 selectedProducts={this.state.cart}
                 onUpdateCart={(id, qty) => {
                   const newCart = [...this.state.cart];

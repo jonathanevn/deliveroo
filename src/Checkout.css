@@ -69,6 +69,14 @@ li {
   list-style: none;
 }
 
+#nameRestaurant {
+  font-family: "Stratos Deliveroo Web";
+  font-weight: 600;
+  font-size: 32px;
+  color: #2e3333;
+  margin-bottom: 50px;
+}
+
 /*----- FORM -----*/
 
 input {
@@ -78,6 +86,7 @@ input {
   border: 1px solid #01ccbc;
   margin-top: 10px;
   margin-bottom: 27px;
+  outline: none;
 }
 
 ::placeholder {
@@ -128,6 +137,7 @@ form {
   margin-top: 5px;
   margin-bottom: 20px;
   padding-top: 15px;
+  outline: none;
 }
 
 .submitButton {

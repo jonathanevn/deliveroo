@@ -260,6 +260,7 @@ li {
   border-style: solid;
   font-weight: bold;
   cursor: pointer;
+  outline: none;
 }
 
 .quantityButton:hover {

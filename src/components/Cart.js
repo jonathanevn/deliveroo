@@ -75,7 +75,8 @@ class Cart extends React.Component {
               pathname: "/checkout",
               submittedCart: this.props.selectedProducts,
               subtotal: subtotal,
-              total: total
+              total: total,
+              restaurant: this.props.name
             }}
           >
             <button className="confirmButton">Valider mon panier</button>

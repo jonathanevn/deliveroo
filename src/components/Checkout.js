@@ -1,5 +1,6 @@
 import React from "react";
 import "../Checkout.css";
+import Restaurant from "./Restaurant";
 
 class Form extends React.Component {
   state = {
@@ -75,13 +76,12 @@ class Form extends React.Component {
   };
 
   render() {
-    console.log(this.props.location.submittedCart);
-
     return (
       <div id="background">
         <div id="container">
           <div id="form">
             <form onSubmit={this.handleSubmit}>
+              <div id="nameRestaurant"> {this.props.location.restaurant}</div>
               <h3>Adresse de livraison</h3>
 
               <div className="twoInput">

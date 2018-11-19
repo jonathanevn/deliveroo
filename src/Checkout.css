@@ -14,15 +14,14 @@
 
 #form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: white;
-  width: 60%;
+  width: calc(60% - 140px);
   justify-content: center;
   align-content: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 70px;
 }
 
 ul {
@@ -74,10 +73,15 @@ li {
   font-weight: 600;
   font-size: 32px;
   color: #2e3333;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 /*----- FORM -----*/
+
+.checkout-form {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
 
 input {
   height: 35px;
@@ -106,12 +110,6 @@ input {
 }
 .rightInput {
   width: 50%;
-}
-
-form {
-  width: 70%;
-  margin-bottom: 40px;
-  margin-top: 40px;
 }
 
 #deliveryInfo {
@@ -154,6 +152,7 @@ form {
   border: none;
   cursor: pointer;
   height: 45px;
+  margin-top: 25px;
 }
 
 .submitButton:hover {

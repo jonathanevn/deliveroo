@@ -88,7 +88,7 @@ class Cart extends React.Component {
             <div id="subtotal1">
               <div>Sous total</div>
               <div className="priceCart">
-                {subtotal} {"€"}
+                {subtotal.toFixed(2)} {"€"}
               </div>
             </div>
             <div id="subtotal2">

@@ -116,7 +116,7 @@ class Form extends React.Component {
                 <div className="leftInput">
                   <h5>Code postal</h5>
                   <input
-                    type="number"
+                    type="text"
                     value={this.state.postcode}
                     onChange={this.handlePostcodeChange}
                     placeholder={"ex: 75011"}
@@ -136,7 +136,7 @@ class Form extends React.Component {
 
               <h5>Numéro de téléphone</h5>
               <input
-                type="number"
+                type="text"
                 value={this.state.phone}
                 onChange={this.handlePhoneChange}
                 placeholder={"ex: +9 77 55 03 30"}
@@ -144,7 +144,6 @@ class Form extends React.Component {
               <h5>Instructions pour votre livreur ?</h5>
               <textarea
                 className="instructions"
-                type="text"
                 value={this.state.instructions}
                 onChange={this.handleInstructionsChange}
                 placeholder={

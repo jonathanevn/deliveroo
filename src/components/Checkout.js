@@ -2,7 +2,7 @@ import React from "react";
 import "../Checkout.css";
 import Restaurant from "./Restaurant";
 import CheckoutForm from "./CheckoutForm";
-import { Elements } from "react-stripe-elements";
+import { Elements } from "react-stripe-elements"; //importer le composant Element
 
 class Form extends React.Component {
   state = {
@@ -78,7 +78,11 @@ class Form extends React.Component {
           <div id="form">
             <div id="nameRestaurant">{this.state.restaurant}</div>
             <Elements>
-              <CheckoutForm />
+              <CheckoutForm total={this.props.location.total} />
+              {/* encapsuler le composent CheckoutForm dans le composant Element. 
+              Ce sont des composants créés par Stripe. 
+              Dans le composant CheckoutForm il ne faut pas oublier de le total de la transaction.
+              Ainsi Stripe sait le montant à payer.*/}
             </Elements>
           </div>
 
@@ -98,16 +102,26 @@ class Form extends React.Component {
 
               <div className="subtotal1line">
                 Frais de livraison
-                <div className="priceItemSubtotal"> 2,50€</div>
+                <div className="priceItemSubtotal">
+                  {this.props.location.shipping}
+                </div>
               </div>
             </div>
 
             <hr />
-            <div id="totalCart">
-              <div>Total</div>
-              <div>
-                {this.props.location.total}
-                {"€"}
+            <div className="cart-tip-total">
+              <div className="total-tip">
+                <span>Pourboir livreur</span>
+                <span>
+                  {this.props.location.tip} {"€"}
+                </span>
+              </div>
+              <div className="total-cart">
+                <span>Total</span>
+                <span>
+                  {this.props.location.total}
+                  {"€"}
+                </span>
               </div>
             </div>
           </div>

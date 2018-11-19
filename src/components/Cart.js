@@ -3,6 +3,20 @@ import "../App.css";
 import { Link } from "react-router-dom";
 
 class Cart extends React.Component {
+  state = {
+    shipping: 2.5,
+    tip: 0
+  };
+
+  updateTip(value) {
+    const tip = this.state.tip + value;
+    if (tip >= 0) {
+      this.setState({
+        tip
+      });
+    }
+  }
+
   render() {
     if (this.props.selectedProducts.length === 0) {
       return (
@@ -60,12 +74,11 @@ class Cart extends React.Component {
       }
       let subtotal = 0;
       let total = 0;
-      let deliveryFees = 2.5;
       for (let j = 0; j < this.props.selectedProducts.length; j++) {
         subtotal +=
           this.props.selectedProducts[j].price *
           this.props.selectedProducts[j].quantity;
-        total = (subtotal + deliveryFees).toFixed(2);
+        total = (subtotal + this.state.shipping + this.state.tip).toFixed(2);
       }
 
       return (
@@ -76,7 +89,9 @@ class Cart extends React.Component {
               submittedCart: this.props.selectedProducts,
               subtotal: subtotal,
               total: total,
-              restaurant: this.props.name
+              restaurant: this.props.name,
+              shipping: this.state.shipping,
+              tip: this.state.tip
             }}
           >
             <button className="confirmButton">Valider mon panier</button>
@@ -84,6 +99,7 @@ class Cart extends React.Component {
 
           <div>{products}</div>
           <hr />
+
           <div id="subtotal">
             <div id="subtotal1">
               <div>Sous total</div>
@@ -97,6 +113,33 @@ class Cart extends React.Component {
             </div>
           </div>
           <hr />
+
+          <div className="cart-tip">
+            <span>Pourboire livreur</span>
+            <div className="cart-tip-buttons">
+              <button
+                className="quantityButton"
+                onClick={() => {
+                  this.updateTip(-0.5);
+                }}
+              >
+                -
+              </button>
+
+              <button
+                className="quantityButton"
+                onClick={() => {
+                  this.updateTip(+0.5);
+                }}
+              >
+                +
+              </button>
+            </div>
+            <span className="cart-product-price">
+              {this.state.tip} {"€"}
+            </span>
+          </div>
+
           <div id="total">
             <div>Total</div>
             <div className="priceCart">

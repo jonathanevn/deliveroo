@@ -4,13 +4,11 @@ import "../App.css";
 class PicturesMenu extends React.Component {
   render() {
     let imgClassName = "";
-    if (this.props.src === undefined) {
-      imgClassName = "noImageMenu";
+    if (this.props.src) {
+      return <img alt="" className="imageMenu" src={this.props.src} />;
     } else {
-      imgClassName = "imageMenu";
+      return null;
     }
-
-    return <img alt="" className={imgClassName} src={this.props.src} />;
   }
 }
 

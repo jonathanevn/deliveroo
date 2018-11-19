@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import PicturesMenu from "./PicturesMenu";
 
 class MenuItem extends Component {
+  renderPopular(isPopular) {
+    if (isPopular) {
+      return <div className="card-popular">★ Populaire</div>;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     let description =
       this.props.description.length > 80
@@ -13,9 +21,12 @@ class MenuItem extends Component {
         <div className="menuInfo">
           <p className="title">{this.props.label}</p>
           <p className="description">{description}</p>
-          <p className="price">
-            {this.props.price} {"€"}
-          </p>
+          <div className="price-popular-container">
+            <p className="price">
+              {this.props.price} {"€"}{" "}
+            </p>
+            {this.renderPopular(this.props.popular)}
+          </div>
         </div>
         <PicturesMenu src={this.props.imageUrl} />
       </div>

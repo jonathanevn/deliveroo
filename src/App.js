@@ -15,7 +15,7 @@ class App extends React.Component {
         <div>
           <ul id="nav">
             <Header />
-            <li className="page">
+            {/*        <li className="page">
               <Link to="/">Home </Link>
             </li>
             <li className="page">
@@ -26,7 +26,7 @@ class App extends React.Component {
             </li>
             <li className="page">
               <Link to="/checkout">Checkout </Link>
-            </li>
+            </li> */}
           </ul>
 
           <Route exact path="/" component={Home} />

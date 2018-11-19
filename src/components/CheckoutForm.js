@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CardElement, injectStripe } from "react-stripe-elements";
+import { CardElement, injectStripe } from "react-stripe-elements"; // import à ne pas oublier
 import axios from "axios";
 import "../Checkout.css";
 
@@ -32,24 +32,36 @@ class CheckoutForm extends Component {
     instructions: ""
   };
 
+  // pour gérer ce qu'il va se passer au clic sur le bouton submit ;
   handleSubmit = event => {
     // On empêche le formulaire d'être envoyé grâce à `event.preventDefault();`
     event.preventDefault();
     // On utilise la fonction createToken pour envoyer la demande de Tokenization à Stripe
     this.props.stripe
+      //toujours mettre le nom et l'adresse de la personne pour créer un token
       .createToken({
         name: "Xavier Colombel",
         address_line1: "42, rue des Orteaux"
       })
+      // je vérifie si le token existe.
       .then(({ token }) => {
         console.log("Token:", token);
-        // On poste l'objet Token à notre back-end
+        // On poste l'objet Token à notre back-end via une requête post axios. J'utilise le https:// généré par ngrok.
+        // Dans l'URL du chemin ngrok, ne pas oublier /api !!!
         axios
-          .post("https://xxxxxxx.ngrok.io/api", {
-            token
+          .post("https://84038747.ngrok.io/api", {
+            token,
+            total: this.props.total
+            // ne pas oublier de mettre le montant de la transaction dans la requete axios post
           })
           .then(function(response) {
             console.log(response);
+            // je vérifie si y a pas d'erreyr
+            if (!response.data.error) {
+              alert("Votre paiement a été accepté !");
+            } else {
+              alert("Problème de transation");
+            }
           })
           .catch(function(error) {
             console.log(error);
@@ -59,6 +71,7 @@ class CheckoutForm extends Component {
 
   render() {
     return (
+      // Attention ! Le onSubmit se faiot toujours sur le form et non sur le bouton
       <form className="checkout-form" onSubmit={this.handleSubmit}>
         <div style={{ width: "100%" }}>
           <h3>Adresse de livraison</h3>
@@ -153,4 +166,4 @@ class CheckoutForm extends Component {
     );
   }
 }
-export default injectStripe(CheckoutForm);
+export default injectStripe(CheckoutForm); //A NE PAS OUBLIER 'INJECTSTRIPE'

@@ -73,7 +73,6 @@ li {
   font-weight: 600;
   font-size: 32px;
   color: #2e3333;
-  margin-bottom: 20px;
 }
 
 /*----- FORM -----*/
@@ -108,6 +107,7 @@ input {
 .leftInput  {
   width: 50%;
 }
+
 .rightInput {
   width: 50%;
 }
@@ -223,10 +223,22 @@ input {
   color: #01ccbc;
 }
 
-#totalCart {
+.cart-tip-total {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-cart {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-weight: 600;
+}
+
+.total-tip {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 400;
   margin-top: 15px;
 }
